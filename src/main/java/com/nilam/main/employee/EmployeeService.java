@@ -33,4 +33,17 @@ public class EmployeeService {
 					)
 			);
 
+	public void updateEmployee(Employee employee, long id) {
+		for(int i = 0; i < employees.size(); i++) {
+			if(employees.get(i).getId() == id) {
+				employees.set(i, employee);
+			}
+		}
+	}
+
+	public void deleteEmployee(long id) {
+		employees.removeIf(e -> e.getId() == id);
+		
+	}
+
 }

@@ -25,9 +25,20 @@ public class EmployeeController {
 		return employeeService.getEmployee(id);
 	}
 
-	@RequestMapping(method=RequestMethod.POST, value="/employees")
+	@RequestMapping(method=RequestMethod.POST, value = "/employees")
 	public void addEmployee(@RequestBody Employee employee) {
 		employeeService.addEmployee(employee);
+	}
+	
+	// Update Employee
+	@RequestMapping(method=RequestMethod.PUT, value = "/employees/{id}")
+	public void updateEmployee(@RequestBody Employee employee, @PathVariable long id) {
+		employeeService.updateEmployee(employee, id);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value = "/employees/{id}" )
+	public void deleteEmployee(@PathVariable long id) {
+		employeeService.deleteEmployee(id);
 	}
 
 }
