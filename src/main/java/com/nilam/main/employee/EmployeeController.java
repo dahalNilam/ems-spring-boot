@@ -30,10 +30,9 @@ public class EmployeeController {
 		employeeService.addEmployee(employee);
 	}
 	
-	// Update Employee
 	@RequestMapping(method=RequestMethod.PUT, value = "/employees/{id}")
-	public void updateEmployee(@RequestBody Employee employee, @PathVariable long id) {
-		employeeService.updateEmployee(employee, id);
+	public void updateEmployee(@RequestBody Employee employee) {
+		employeeService.addEmployee(employee);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value = "/employees/{id}" )
